@@ -28,7 +28,8 @@ class OBSWebsocketClient (WebSocketClient):
     def authenticate (self, msg, password=None, onAuthenticated=None):
         if msg['authRequired'] == False:
             self.authenticated = True
-            onAuthenticated(msg={'status': msg['status']})
+            onAuthenticated.putArgument('msg', {'status': msg['status']})
+            onAuthenticated.call()
             return
         if password is None:
             return
