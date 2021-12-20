@@ -4,9 +4,6 @@ from typing import Any
 import aiohttp
 from asyncio.queues import Queue, QueueEmpty
 
-from virtualstudio.common.logging import logengine
-
-
 class WebSocketClient:
 
     def __init__(self, address: str, timeout: float=300):
@@ -18,8 +15,6 @@ class WebSocketClient:
         self.ws = None
 
         self.sendQueue = Queue()
-        self.logger = logengine.getLogger()
-
         self.shouldClose = False
 
     async def connect(self):
@@ -45,7 +40,7 @@ class WebSocketClient:
             try:
                 request = self.sendQueue.get_nowait()
             except QueueEmpty:
-                await sleep(0.001)
+                await sleep(0.00001)
                 continue
 
             if isinstance(request, str):

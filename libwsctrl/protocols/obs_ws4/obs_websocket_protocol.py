@@ -1,3 +1,4 @@
+from copy import deepcopy
 from typing import Any, Dict, List, Union
 
 __MESSAGE_ID = 0
@@ -1141,6 +1142,33 @@ def setSceneItemProperties(item: Union[str, Object], scene_name: str = '',
                          'crop.right': crop_right,
                          'visible': visible, 'locked': locked, 'bounds.type': bounds_type,
                          'bounds.alignment': bounds_alignment, 'bounds.x': bounds_x, 'bounds.y': bounds_y})
+
+
+def setSceneItemPropertiesFromDict(item: Union[str, Object], scene_name: str = '', properties=None):
+    """
+    Sets the scene specific properties of a source. Unspecified properties will remain unchanged.
+    Coordinates are relative to the item's parent (the scene or group it belongs to).
+
+        :param item: String | Object - Scene Item name (if this field is a string) or specification
+        (if it is an object)
+.
+        :param scene_name: String (optional) - Name of the scene the source item belongs to. Defaults to the current
+        scene.
+        - item.name: String (optional) - Scene Item name (if the `item` field is an object)
+        - item.id: int (optional) - Scene Item ID (if the `item` field is an object)
+
+        :param properties: Dictionary of SceneItem Properties
+    """
+
+    if properties is not None:
+        properties = deepcopy(properties)
+    else:
+        properties = {}
+
+    properties['scene-name'] = scene_name
+    properties['item'] = item
+
+    return __createJSON("SetSceneItemProperties", properties)
 
 
 def resetSceneItem(item: Union[str, Object], scene_name: str = ''):
