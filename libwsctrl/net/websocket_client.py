@@ -17,7 +17,9 @@ class WebSocketClient:
         self.sendQueue = Queue()
         self.shouldClose = False
 
-    async def connect(self):
+    async def connect(self, headers=None):
+        if headers is None:
+            headers = {}
         self.shouldClose = False
         self.session = aiohttp.ClientSession()
         self.ws = await self.session.ws_connect(url=self._address, timeout=self._timeout)

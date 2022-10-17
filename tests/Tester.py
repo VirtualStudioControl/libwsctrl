@@ -1,6 +1,6 @@
-from libwsctrl.net.obs_websocket4_client import OBSWebsocketClient
-from libwsctrl.protocols.obs_ws4.obs_websocket_protocol import *
-from libwsctrl.protocols.obs_ws4.obs_websocket_events import *
+from libwsctrl.net.obs_websocket5_client import OBSWebsocketClient
+from libwsctrl.protocols.obs_ws5.requests import *
+from libwsctrl.protocols.obs_ws5.events import EVENT_SCENEITEMENABLESTATECHANGED
 
 import asyncio
 
@@ -16,15 +16,14 @@ def printAll(*args, **kwargs):
 
 def onAuthenticated(msg):
     callback = Callback(printAll)
-    wsClient.addEventListener(event=EVENT_SCENEITEMVISIBILITYCHANGED, listener=callback)
+    wsClient.addEventListener(event=EVENT_SCENEITEMENABLESTATECHANGED, listener=callback)
     wsClient.sendMessageJson(getSceneList(), callback=callback)
-
 
 
 async def main():
     global wsClient
-    wsClient = OBSWebsocketClient("ws://127.0.0.1:4444") #"ws://192.168.114.230:4444"
-    await wsClient.connect(password="12345678", onAuthenticated=Callback(onAuthenticated))
+    wsClient = OBSWebsocketClient("ws://127.0.0.1:4455") #"ws://192.168.114.230:4444"
+    await wsClient.connect(password="H19sPSKs02gtHARG", onAuthenticated=Callback(onAuthenticated))
     rcvLoop = wsClient.recieveLoop()
     sendLoop = wsClient.sendLoop()
 
