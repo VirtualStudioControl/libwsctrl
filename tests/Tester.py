@@ -17,13 +17,13 @@ def printAll(*args, **kwargs):
 def onAuthenticated(msg):
     callback = Callback(printAll)
     wsClient.addEventListener(event=EVENT_SCENEITEMENABLESTATECHANGED, listener=callback)
-    wsClient.sendMessageJson(getSceneList(), callback=callback)
+    wsClient.sendMessageJson(getSourceFilterList("Notes"), callback=callback)
 
 
 async def main():
     global wsClient
-    wsClient = OBSWebsocketClient("ws://127.0.0.1:4455") #"ws://192.168.114.230:4444"
-    await wsClient.connect(password="H19sPSKs02gtHARG", onAuthenticated=Callback(onAuthenticated))
+    wsClient = OBSWebsocketClient("ws://192.168.0.94:4455") #"ws://192.168.114.230:4444"
+    await wsClient.connect(password="W3GRyd13y1cXw4aD", onAuthenticated=Callback(onAuthenticated))
     rcvLoop = wsClient.recieveLoop()
     sendLoop = wsClient.sendLoop()
 

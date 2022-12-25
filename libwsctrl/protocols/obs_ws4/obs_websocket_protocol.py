@@ -349,7 +349,7 @@ def setVolume(source: str, volume: float, useDecibel: bool = False):
 
     """
     return __createJSON("SetVolume", {'source': source, 'volume': volume, 'useDecibel': useDecibel})
-
+4
 
 def setAudioTracks(sourceName: str, track: int, active: bool):
     """

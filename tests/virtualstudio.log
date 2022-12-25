@@ -1,0 +1,14 @@
+[2022-12-21 21:37:38,412][DEBUG] Using proactor: IocpProactor at C:\Users\eric\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py, line 629, Function: __init__
+[2022-12-21 21:37:41,234][ERROR] Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000239F24A1A50> at C:\Users\eric\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py, line 1757, Function: default_exception_handler
+[2022-12-21 22:26:01,429][DEBUG] Using proactor: IocpProactor at C:\Users\eric\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py, line 629, Function: __init__
+[2022-12-22 01:53:50,523][ERROR] Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001B51F4817D0> at C:\Users\eric\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py, line 1757, Function: default_exception_handler
+[2022-12-22 02:25:17,928][DEBUG] Using proactor: IocpProactor at C:\Users\eric\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py, line 629, Function: __init__
+[2022-12-22 03:01:03,909][DEBUG] {'d': {'eventData': {'sceneItemId': 3, 'sceneName': 'F'}, 'eventIntent': 128, 'eventType': 'SceneItemSelected'}, 'op': 5} at B:\Code\Python\ChaosStudio\libwsctrl\libwsctrl\net\obs_websocket5_client.py, line 149, Function: onOpEvent
+[2022-12-22 03:01:04,925][DEBUG] {'d': {'eventData': {'sceneItemId': 1, 'sceneName': 'F'}, 'eventIntent': 128, 'eventType': 'SceneItemSelected'}, 'op': 5} at B:\Code\Python\ChaosStudio\libwsctrl\libwsctrl\net\obs_websocket5_client.py, line 149, Function: onOpEvent
+[2022-12-22 03:01:14,598][DEBUG] {'d': {'eventData': {'defaultFilterSettings': {'brightness': 0.0, 'color_add': 0, 'color_multiply': 16777215, 'contrast': 0.0, 'gamma': 0.0, 'hue_shift': 0.0, 'opacity': 1.0, 'saturation': 0.0}, 'filterIndex': 0, 'filterKind': 'color_filter_v2', 'filterName': 'Color Correction', 'filterSettings': {}, 'sourceName': 'Background'}, 'eventIntent': 32, 'eventType': 'SourceFilterCreated'}, 'op': 5} at B:\Code\Python\ChaosStudio\libwsctrl\libwsctrl\net\obs_websocket5_client.py, line 149, Function: onOpEvent
+[2022-12-22 03:03:10,300][ERROR] Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001EBA65A1650> at C:\Users\eric\AppData\Local\Programs\Python\Python311\Lib\asyncio\base_events.py, line 1757, Function: default_exception_handler
+[2022-12-22 03:03:12,574][DEBUG] Using proactor: IocpProactor at C:\Users\eric\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py, line 629, Function: __init__
+[2022-12-22 03:03:30,207][DEBUG] {'d': {'eventData': {'filterName': 'Color Correction', 'sourceName': 'Background'}, 'eventIntent': 32, 'eventType': 'SourceFilterRemoved'}, 'op': 5} at B:\Code\Python\ChaosStudio\libwsctrl\libwsctrl\net\obs_websocket5_client.py, line 149, Function: onOpEvent

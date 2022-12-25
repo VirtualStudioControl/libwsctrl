@@ -82,7 +82,6 @@ class OBSWebsocketClient (WebSocketClient):
     def sendMessageJson(self, data: Any, callback: Callback=None):
         if data["op"] == 6 and callback is not None:
            self.addCallback(data["d"]["requestId"], callback)
-        print("Sent Message: " + str(data))
         return super().sendMessageJson(data)
 
     def addEventListener(self, event, listener):
