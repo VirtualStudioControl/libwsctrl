@@ -42,7 +42,7 @@ class WebSocketClient:
             try:
                 request = self.sendQueue.get_nowait()
             except QueueEmpty:
-                await sleep(0.00001)
+                await sleep(0.001) # IMPORTANT: Sub-ms sleep causes problems on certain systems (Raspi, etc...).
                 continue
 
             if isinstance(request, str):
